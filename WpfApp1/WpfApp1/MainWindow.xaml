@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Title="MainWindow" Width="400" SizeToContent="Height">
+    <Grid Margin="10">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <TextBlock Text="{Binding SelectedDate.Value}" Margin="10" Background="AliceBlue" TextAlignment="Center"/>
+            <Calendar Margin="5" HorizontalAlignment="Center" SelectedDate="{Binding SelectedDate.Value}"/>
+            <DatePicker Margin="5" HorizontalAlignment="Center" SelectedDate="{Binding SelectedDate.Value}"/>
+        </StackPanel>
     </Grid>
 </Window>
